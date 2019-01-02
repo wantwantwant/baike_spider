@@ -15,7 +15,7 @@ class HtmlDownloader(object):
         #     return None
 
         headers ={
-            'Host': 'gsp0.baidu.com',
+            'Host': 'baike.baidu.com',
             'Referer': 'https://baike.haidu.com/',
             'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36'
         }
@@ -24,4 +24,4 @@ class HtmlDownloader(object):
         if response.status_code != 200:
             raise Exception('请求失败， code {response.status_code}')
 
-            return response.text
+        return response.content.decode(encoding='utf-8')
